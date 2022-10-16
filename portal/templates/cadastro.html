@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'cadastro' %}" method="POST" style="margin: auto; width: 500px,"> {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Nome</span>
+        </div>
+        <input type="text" class="form-control" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÁÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]+$" placeholder="" name="nome">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend" width="300">
+            <span class="input-group-text" id="basic-addon1">Sobrenome</span>
+        </div>
+        <input type="text" class="form-control" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÁÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]+$" placeholder="" name="sobrenome">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">E-mail</span>
+        </div>
+        <input type="email" class="form-control" placeholder="" name="email">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Telefone</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" name="telefone">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Usuário</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" name="username">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Senha</span>
+        </div>
+        <input type="password" class="form-control" placeholder="" name="senha">
+        <small id="passwordHelpBlock" class="form-text text-muted">
+            - Sua senha deve ter entre 6 e 10 caracteres, sendo apenas letras e números
+        </small>
+    </div><br>
+    <center>
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a href="{% url 'aluno' %}" class="btn btn-danger">Cancelar</a>
+    </center><br><br>
+</form>
+
+{% endblock %}

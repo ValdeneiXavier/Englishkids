@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if messages %}
+{% for m in messages %}
+<div class="alert alert-danger" role="alert">
+    {{ m }}
+</div>
+{% endfor %}
+{% endif %}
+<br>
+<form action="{% url 'login' %}" method="POST" style="margin: auto; width: 280px;">{% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Usuário</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="Usuário" aria-describedby="basic-addon1" name="usuario">
+    </div><br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Senha</span>
+        </div>
+        <input type="password" class="form-control" placeholder="" aria-label="Senha" aria-describedby="basic-addon1" name="senha">
+    </div><br>
+    <center><button class="btn btn-success" type="submit">Logar</button>
+        <a class="btn btn-secondary" href="{% url 'home' %}">Página Inicial</a>
+    </center><br>
+    <center>
+        <a type="button" class="btn btn-link" href="{% url 'cadastro' %}">Ainda não tem um usuário? Cadastre-se</a>
+    </center><br>
+    <center>
+        <a type="button" class="btn btn-link" href="{% url 'cadastro' %}">Esqueci a senha</a>
+    </center>
+</form>
+
+{% endblock %}

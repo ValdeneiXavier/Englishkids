@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'aluno_add' %}" method="POST" style="margin: auto; width: 400px;">{% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class='input-group-text' id="basic-addon1">Nome</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" name="nome">
+    </div>
+    <br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend" width="300">
+            <span class='input-group-text' id="basic-addon1">Email</span>
+        </div>
+        <input type="email" class="form-control" placeholder="" name="email">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend" width="300">
+            <span class='input-group-text' id="basic-addon1">telefone</span>
+        </div>
+        <input type="text" class="form-control" placeholder="" name="telefone">
+    </div>
+    <br>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class='input-group-text' id="basic-addon1">Data de Nascimento</span>
+        </div>
+        <input type="date" class="form-control" placeholder="" name="data_nascimento">
+    </div>
+    <br>
+    <center>
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a href="{% url 'aluno' %}" class="btn btn-danger">Cancelar</a>
+    </center>
+    <br>
+    <br>
+</form>
+
+{% endblock %}

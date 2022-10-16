@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br>
+    <div class="card">
+        <div class="card-body">
+            <center><a href="{% url 'aluno' %}" style="text-decoration:none">Autor</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;
+            
+            </center>
+
+        </div>
+    </div>
+    <br>
+    {% if messages %}
+    {% for m in messages %}
+    <div class="alert alert-sucess" role="alert">
+        {{ m }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;Bem vindos ao Portal de Livros</h3>
+
+    {% endblock %}
